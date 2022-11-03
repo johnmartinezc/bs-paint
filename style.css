@@ -62,21 +62,26 @@
 }
 
 .color-1 {
-
+background-color:red
 }
 
 .color-2 {
-
+  background-color:purple
 }
 
 .color-3 {
-
+  background-color: black
 }
 
 .color-4 {
-
+  background-color: blue
 }
 
 .color-5 {
+  background-color:white
+}
 
+.palette-color:hover  {
+  cursor: pointer;
+  box-shadow: 0px 5px 10px;
 }

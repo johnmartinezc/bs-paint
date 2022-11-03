@@ -51,6 +51,13 @@ while (count <= gridWidth * gridWidth) {
 
 
 
+let brush = document.querySelector('.current-brush')
+
+let palette = document.querySelectorAll('.palette div')
+
+let canvasSquares = document.querySelectorAll('.canvas div')
+
+let app = document.querySelector('.app')
 /****************************
  * EVENT LISTENER FUNCTIONS *
 ****************************/
@@ -61,8 +68,52 @@ while (count <= gridWidth * gridWidth) {
 // run as event listeners (after the next step is set up) isn't a
 // bad idea for testing purposes.
 
+brush.addEventListener('click', function(){
+  console.log('brush!')
+})
+
+for (let i = 0; i < palette.length; i++) {
+  palette[i].addEventListener('click',function(){
+    console.log( palette[i].classList)
+brush.classList.replace(brush.classList[1], palette[i].classList[1])  })
+  
+}
 
 
+// for (let i = 0; i < canvasSquares.length; i++) {
+//   canvasSquares[i].addEventListener('click', function(){
+//     console.log( canvasSquares[i].classList)
+
+//     canvasSquares[i].classList.replace(canvasSquares.classList[1], brush.classList[i])
+//   })
+  
+// }
+
+
+for(let square of canvasSquares){
+  // square.addEventListener('click', function(){
+  //   square.classList.replace(square.classList[1], brush.classList[1])
+  // })
+
+  square.addEventListener('mouseover', function(){
+    
+    if(MouseDown === true){
+      square.classList.replace(square.classList[1],brush.classList[1])
+    }
+  })
+}
+
+let MouseDown = false
+
+
+app.addEventListener('mousedown', function(){
+  console.log('Mouse is down')
+  MouseDown = true
+})
+app.addEventListener('mouseup', function(){
+  console.log('Mouse is up')
+  MouseDown = false
+})
 /**************************
  * WIRING IT ALL TOGETHER *
 **************************/
@@ -71,3 +122,16 @@ while (count <= gridWidth * gridWidth) {
 // You'll need to add the appropriate event listener for each
 // square and for each palette color from the functions you
 // wrote above.
+
+
+
+
+
+
+
+
+
+
+
+
+
