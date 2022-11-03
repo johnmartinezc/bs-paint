@@ -80,21 +80,8 @@ brush.classList.replace(brush.classList[1], palette[i].classList[1])  })
 }
 
 
-// for (let i = 0; i < canvasSquares.length; i++) {
-//   canvasSquares[i].addEventListener('click', function(){
-//     console.log( canvasSquares[i].classList)
-
-//     canvasSquares[i].classList.replace(canvasSquares.classList[1], brush.classList[i])
-//   })
-  
-// }
-
-
 for(let square of canvasSquares){
-  // square.addEventListener('click', function(){
-  //   square.classList.replace(square.classList[1], brush.classList[1])
-  // })
-
+ 
   square.addEventListener('mouseover', function(){
     
     if(MouseDown === true){
